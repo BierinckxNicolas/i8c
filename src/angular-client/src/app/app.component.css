@@ -1,0 +1,64 @@
+nav ul {
+  padding: 0;
+  width: 100%;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+
+a.navlink {
+  color: rgba(0, 0, 0, .9);
+  text-decoration: none;
+}
+
+a.navlink2 {
+  color: rgba(0, 0, 0, .5);
+  text-decoration: none;
+  padding: 0 6px 0 6px;
+}
+
+a.navlink2:hover {
+  color: rgba(0, 0, 0, .7);
+}
+
+.navbar {
+  padding: 18px;
+}
+
+.flexCenter {
+  /* Internet Explorer 10 */
+  display: -ms-flexbox;
+  -ms-flex-pack: center;
+  -ms-flex-align: center;
+  /* Firefox */
+  display: -moz-box;
+  -moz-box-pack: center;
+  -moz-box-align: center;
+  /* Safari, Opera, and Chrome */
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  /* W3C */
+  display: flexbox;
+  box-pack: center;
+  box-align: center;
+}
+
+.displayFlex {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.flex00a {
+  flex: 0 0 auto;
+}
+
+.flex11a {
+  flex: 1 1 auto;
+}
+
+.width83 {
+  width: 83%;
+}

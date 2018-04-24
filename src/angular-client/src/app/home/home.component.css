@@ -1,0 +1,34 @@
+.btn-succes {
+  background-color: #5CB85C;
+  border-color: #5CB85C;
+  color: #fff;
+  padding: 15px 30px 15px 30px;
+}
+
+.btn-succes:hover {
+  background-color: #449D44;
+  border-color: #449D44;
+  color: #fff;
+}
+
+
+.btn-succes:active {
+  background-color: #398439;
+  border-color: #2D672D;
+  color: #fff;
+}
+
+.bn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+}
+
+h1 {
+  text-align: center;
+}
+
+ng-template {
+  margin-bottom: 20px;
+}

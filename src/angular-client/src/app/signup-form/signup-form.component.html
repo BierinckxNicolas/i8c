@@ -1,0 +1,118 @@
+<div>
+  <form class="form-horizontal" [formGroup]="signupForm" (ngSubmit)="onFormSubmit()">
+    <fieldset>
+      <p style="text-align:left;">Fill out the form below to be eligible to win an iPhone 7. Full details of the competition can be found here.</p>
+
+      <div class="row">
+        <label for="firstName" class="col-sm-2 col-form-label">First Name</label>
+        <input type="text" class="col-sm-10" formControlName="firstName" id="firstName" placeholder="First Name" />
+      </div>
+      <div *ngIf="firstName.invalid && firstName.touched" class="text-danger col-sm-10 ml-sm-auto" style="margin-bottom:20px;">
+        <div *ngIf="firstName.errors.required">
+          First name is required
+        </div>
+      </div>
+
+      <div class="row">
+        <label for="lastName" class="col-sm-2 col-form-label">Last Name</label>
+        <input type="text" class="col-sm-10" formControlName="lastName" id="lastName" placeholder="Last Name" />
+        <div *ngIf="lastName. invalid && lastName.touched" class="text-danger col-sm-10 ml-sm-auto">
+          <div *ngIf="lastName.errors.required">
+            Last name is required
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <label for="privateEmail" class="col-sm-2 col-form-label">Private Email</label>
+        <input type="text" class="col-sm-10" formControlName="privateEmail" id="privateEmail" placeholder="Private Email" />
+        <div *ngIf="privateEmail.invalid && privateEmail.touched" class="text-danger col-sm-10 ml-sm-auto">
+          <div *ngIf="privateEmail.errors.required">
+            Private email is required
+          </div>
+          <div *ngIf="privateEmail.errors.pattern">
+            The email id doesn't seem right
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <label for="schoolEmail" class="col-sm-2 col-form-label">School Email</label>
+        <input type="text" class="col-sm-10" formControlName="schoolEmail" id="schoolEmail" placeholder="School Email" />
+        <div *ngIf="schoolEmail.invalid && schoolEmail.touched" class="text-danger col-sm-10 ml-sm-auto">
+          <div *ngIf="schoolEmail.errors?.required">
+            School email is required
+          </div>
+          <div *ngIf="schoolEmail.errors?.pattern">
+            The email id doesn't seem right
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <label for="mobilePhone" class="col-sm-2 col-form-label">Mobile Phone</label>
+        <input type="text" class="col-sm-10" formControlName="mobilePhone" id="mobilePhone" placeholder="Mobile Phone" />
+        <div *ngIf="mobilePhone.invalid && mobilePhone.touched" class="text-danger col-sm-10 ml-sm-auto">
+          <div *ngIf="mobilePhone.errors?.required">
+            Mobile phone number is required
+          </div>
+          <div *ngIf="mobilePhone.errors?.pattern">
+            The mobile phone number doesn't seem to be correct
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-10 ml-sm-auto" style=" padding-left:0px;">
+          <p>What's the name of Apple's Operating System for the iPhone?</p>
+          <input type="radio" formControlName="question" name="question" value="ANDROID"> Android
+          <input type="radio" formControlName="question" name="question" value="IOS"> iOS
+          <input type="radio" formControlName="question" name="question" value="WINDOWS"> Windows
+        </div>
+        <div *ngIf="question.invalid && question.touched" class="text-danger col-sm-10 ml-sm-auto">
+          <div *ngIf="question.errors.required">
+            Please check one of the answers
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class=" col-sm-10 ml-sm-auto " style="padding-right:0px; padding-left:0px;">
+          <p> What will be the total number of students that will have registered to participate by the end of the contest?</p>
+          <input type="number" class="col-sm-12" formControlName="tieBreaker" id="tieBreaker" placeholder="Tie Breaker">
+        </div>
+        <div *ngIf="tieBreaker.invalid && tieBreaker.touched" class="text-danger col-sm-10 ml-sm-auto">
+          <div *ngIf="tieBreaker.errors.required">
+            Tiebreaker is required
+          </div>
+          <div *ngIf="tieBreaker.errors.min">
+            This number is too low
+          </div>
+        </div>
+      </div>
+
+      <!--- Terms and conditions Block --->
+      <div class="row">
+        <label class=" col-sm-10 ml-sm-auto" style="padding-left:0px;">
+        <input type="checkbox" formControlName = "terms"> I accept the Terms & Conditions
+        <div class="text-danger" *ngIf="(terms.invalid && terms.touched)" className="form-control-feedback">
+          Please accept the Terms and conditions first.
+        </div>
+        </label>
+      </div>
+
+      <!--- Buttons Block -->
+      <div class="row" style="padding-left:0px;">
+        <button type="submit" class="btn btn-succes col-sm-2 ml-sm-auto">Submit</button>
+        <div class="col-sm-8"></div>
+      </div>
+
+    </fieldset>
+  </form>
+
+  <!--- Log the FormGroup values to see if the binding is working -->
+  <!---  <p>Form value {{ signupForm.value | json }} </p>
+  <p> Form status {{ signupForm.status | json}} </p>-->
+
+</div>
